@@ -10,7 +10,14 @@
     <h1>My Notes</h1>
     <ul>
         {% for note in notes %}
-            <li>{{ note }}</li>
+            <li>
+                <strong>{{ note.title }}</strong><br>
+                <em>Category:</em> {{ note.category.title }}<br>
+                {{ note.text }}<br>
+                {% if note.reminder %}
+                    <small><em>Reminder: {{ note.reminder|date:"Y-m-d H:i" }}</em></small>
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
 </body>
