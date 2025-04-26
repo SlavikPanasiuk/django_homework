@@ -1,0 +1,7 @@
+<h2>Створити нотатку</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Зберегти</button>
+</form>
+<a href="{% url 'note_list' %}">Назад до списку</a>
